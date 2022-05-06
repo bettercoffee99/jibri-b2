@@ -18,7 +18,7 @@ ENV RCLONE_VER=1.56.2 \
 LABEL build_version="Version:- ${RCLONE_VER} Build-date:- ${BUILD_DATE}"
 
 RUN apt-dpkg-wrap apt-get update && \
-    apt-dpkg-wrap apt-get install -y jibri libgl1-mesa-dri procps jitsi-upload-integrations jq && \
+    apt-dpkg-wrap apt-get install -y curl zip unzip jibri libgl1-mesa-dri procps jitsi-upload-integrations jq && \
     apt-cleanup
 
 RUN curl -O https://downloads.rclone.org/v${RCLONE_VER}/rclone-v${RCLONE_VER}-linux-${ARCH}.zip && \
